@@ -15,7 +15,7 @@ module.exports = {
   mode: "development",
 
   // webpackがビルドする際に開始点(エントリーポイント)となるJSファイルを設定
-  entry: "./src/index.ts",
+  entry: "./src/index.tsx",
 
   // bundle後のファイルをwebpackがどこにどのような名前で出力すればいいのかを指定できる
   output: {
