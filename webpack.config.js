@@ -39,5 +39,5 @@ module.exports = {
     // 拡張子を配列で指定
     extensions: [".ts", ".tsx", ".js", ".json"],
   },
-  plugins: {},
+  // plugins: {},
 };
