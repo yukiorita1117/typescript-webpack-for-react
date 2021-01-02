@@ -26,7 +26,8 @@ module.exports = {
     rules: [
       {
         // プロパティに 拡張子を指定。Loaderがどのような種類のファイルを処理するべきなのか特定する。正規表現で拡張子を指定します。
-        test: /\.ts$/,
+        // .ts もしくは .tsxにする。
+        test: /\.tsx?$/,
         // プロパティに　loaderを指定。TypeScript をコンパイルする
         use: "ts-loader",
       },
@@ -36,7 +37,7 @@ module.exports = {
   // フロントエンドの開発では拡張子を省略することが多いので、記載したほうがトラブルに巻き込まれにくい。
   resolve: {
     // 拡張子を配列で指定
-    extensions: [".ts", ".js"],
+    extensions: [".ts", ".tsx", ".js", ".json"],
   },
   plugins: {},
 };
