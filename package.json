@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "start": "webpack -w --config webpack.config",
     "build": "webpack",
     "watch": "webpack -w"
   },

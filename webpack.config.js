@@ -1,17 +1,27 @@
+const path = require("path");
+
+// webpackへの指示内容をまとめた設定ファイル
+// // 無名の連想配列に設定情報を書き連ね、エクスポートしている。
 module.exports = {
-  // モード値を production に設定すると最適化された状態で、JSファイルが出力される。
-  // モード値を development に設定するとソースマップ有効でJSファイルが出力される。
+  // バンドルする時のモードを決めれる。
+  // モード値を production に設定すると最適化された状態で、JSファイルが出力される。デバッグしやすい状態にバンドルする。
+  // モード値を development に設定するとソースマップ有効でJSファイルが出力される。本番用なのでなるべくファイルサイズを小さくする。
   mode: "development",
 
-  // メインとなるJavaScriptファイル（エントリーポイント）
-  entry: "./src/main.ts",
+  // webpackがビルドする際に開始点(エントリーポイント)となるJSファイルを設定
+  entry: "./src/index.ts",
 
+  // bundle後のファイルをwebpackがどこにどのような名前で出力すればいいのかを指定できる
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+  },
   module: {
     rules: [
       {
-        // 拡張子 .ts の場合
+        // プロパティに 拡張子を指定。Loaderがどのような種類のファイルを処理するべきなのか特定する。正規表現で拡張子を指定します。
         test: /\.ts$/,
-        // TypeScript をコンパイルする
+        // プロパティに　loaderを指定。TypeScript をコンパイルする
         use: "ts-loader",
       },
     ],
