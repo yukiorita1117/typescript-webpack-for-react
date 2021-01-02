@@ -3,6 +3,10 @@
     // コンパイルにおけるオプションを設定
     "sourceMap": true, // ソースマップ は変換後のソースと元のソースを関連付けるファイルであり、ブラウザーが元のソースを再構成して、そのソースをデバッガーに提供できます。
     "target": "es2020", // TSはECMAScript 11に変換。出力対象をECMAScript 11仕様のJavaScriptにするということ。
-    "module": "es2020" // TSのモジュールはES Modulesとして出力
+    "module": "es2020", // TSのモジュールはES Modulesとして出力
+    // JSXの書式を有効に設定
+    "jsx": "react",
+    "moduleResolution": "node",
+    "lib": ["es2020", "dom"]
   }
 }
