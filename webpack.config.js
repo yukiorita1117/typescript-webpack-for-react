@@ -14,6 +14,13 @@ module.exports = {
   // モード値を development に設定するとソースマップ有効でJSファイルが出力される。本番用なのでなるべくファイルサイズを小さくする。
   mode: "development",
 
+  // ローカル開発用環境を立ち上げる
+  devServer: {
+    contentBase: "dist",
+    // ブラウザが自動的に localhost を開く様にする
+    open: true,
+  },
+
   // webpackがビルドする際に開始点(エントリーポイント)となるJSファイルを設定
   entry: "./src/index.tsx",
 
