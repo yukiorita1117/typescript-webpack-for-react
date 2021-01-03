@@ -19,6 +19,8 @@ module.exports = {
     contentBase: "dist",
     // ブラウザが自動的に localhost を開く様にする
     open: true,
+    host: "localhost",
+    port: 3000,
   },
 
   // webpackがビルドする際に開始点(エントリーポイント)となるJSファイルを設定
