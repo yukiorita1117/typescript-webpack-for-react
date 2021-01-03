@@ -1,16 +1,16 @@
 import * as React from "react";
 
 // Propsの型定義
-interface IProps {
+interface Props {
   name: string;
 }
 
-interface IState {
+interface ComponentState {
   count: number;
 }
 
-export class Sub extends React.Component<IProps, IState> {
-  constructor(props) {
+export class Sub extends React.Component<Props, ComponentState> {
+  constructor(props: any) {
     super(props);
     this.state = {
       count: 0,
