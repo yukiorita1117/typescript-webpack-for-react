@@ -1,5 +1,10 @@
 const path = require("path");
 
+// モード値をを定数で管理する。
+const MODE = "development";
+// ソースマップの利用有無(productionのときはソースマップを利用しない様にする)
+const enabledSourceMap = MODE === "development";
+
 // webpackへの指示内容をまとめた設定ファイル
 // // 無名の連想配列に設定情報を書き連ね、エクスポートしている。
 module.exports = {
@@ -12,7 +17,7 @@ module.exports = {
   // バンドルする時のモードを決めれる。
   // モード値を production に設定すると最適化された状態で、JSファイルが出力される。デバッグしやすい状態にバンドルする。
   // モード値を development に設定するとソースマップ有効でJSファイルが出力される。本番用なのでなるべくファイルサイズを小さくする。
-  mode: "development",
+  mode: MODE,
 
   // ローカル開発用環境を立ち上げる
   devServer: {
@@ -47,7 +52,11 @@ module.exports = {
           "style-loader",
           {
             loader: "css-loader",
-            options: { url: false },
+            options: {
+              url: false,
+              // ソースマップを有効にする
+              sourceMap: enabledSourceMap,
+            },
           },
         ],
       },
