@@ -49,4 +49,5 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js", ".json"],
   },
   // plugins: {},
+  target: ["web", "es2020"],
 };
