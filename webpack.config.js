@@ -40,6 +40,17 @@ module.exports = {
         // プロパティに　loaderを指定。TypeScript をコンパイルする
         use: "ts-loader",
       },
+      {
+        test: /\.css/,
+        use: [
+          // css-loader →  style-loaderの順で適用される。ネストが深い方から順。
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: { url: false },
+          },
+        ],
+      },
     ],
   },
   // 以下を定義しないと import 文で拡張子を書く必要が生まれる。
